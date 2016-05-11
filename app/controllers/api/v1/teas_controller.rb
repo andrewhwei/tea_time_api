@@ -1,5 +1,5 @@
-class TeasController < ApplicationController
-
+class Api::V1::TeasController < ApplicationController
+  
   def index
     @teas = Tea.all
   end
@@ -32,6 +32,6 @@ class TeasController < ApplicationController
   def destroy
     @tea = Tea.find_by(id: params[:id])
     @tea.delete
+    render json: "Employee Deleted"
   end
-
 end
