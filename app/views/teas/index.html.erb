@@ -1,0 +1,21 @@
+<div ng-app="app">
+  <div ng-controller="teasCtrl" ng-init="setup()">
+  
+    <table>
+      <tr>
+        <th>Tea</th>
+        <th>Origin</th>
+        <th>Oz available</th>
+        <th>In stock</th>
+      </tr>
+
+      <tr ng-repeat="tea in teas">
+        <td>{{tea.name}}</td>
+        <td>{{tea.origin}}</td>
+        <td>{{tea.weight}}</td>
+        <td>{{tea.in_stock}}</td>
+      </tr>
+    </table>
+
+  </div>
+</div>

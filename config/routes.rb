@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  
+  root 'teas#index'
+  get '/teas', to: 'teas#index'
 
 namespace :api do
   namespace :v1 do
     get '/teas', to: 'teas#index'
     get '/teas/:id', to: 'teas#show'
-    post '/teas', to: 'teas#create'
+    post '/teas', to: 'teas#create' #post man to do this action and below
     patch '/teas/:id', to: 'teas#update'
     delete '/teas/:id', to: 'teas#destroy'
   end

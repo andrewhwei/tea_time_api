@@ -1,3 +1,4 @@
+json.id tea.id
 json.name tea.name
 json.origin tea.origin
 json.weight tea.weight
