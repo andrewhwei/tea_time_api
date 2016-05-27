@@ -10,8 +10,11 @@ class Api::V1::TeasController < ApplicationController
 
   def create
     @tea = Tea.new(name: params[:name], origin: params[:origin], weight: params[:weight], in_stock: params[:in_stock])
-    @tea.save
-    render :show
+    if @tea.save
+      render :show
+    else
+      render json: {errors: @tea.errors.full_messages}, status: 422
+    end
   end
 
   def update
@@ -27,6 +30,6 @@ class Api::V1::TeasController < ApplicationController
   def destroy
     @tea = Tea.find_by(id: params[:id])
     @tea.delete
-    render json: "Employee Deleted"
+    render json: {message: "Employee Deleted"}
   end
 end

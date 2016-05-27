@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  
+
   root 'teas#index'
   get '/teas', to: 'teas#index'
+  get '/teas/new', to: 'teas#new'
 
 namespace :api do
   namespace :v1 do

@@ -1,6 +1,25 @@
 <div ng-app="app">
   <div ng-controller="teasCtrl" ng-init="setup()">
   
+    <ul>
+      <li ng-repeat="error in errors">{{ error }}</li>
+    </ul>
+
+    <div>
+      <label>Filter by name:
+      <input ng-model="nameFilter"></label>
+    </div>
+    <div>
+      <label>Filter by origin:
+      <input ng-model="nameOrigin"></label>
+    </div>
+    <div>
+      <label>Add a new tea product:
+      <input ng-model="newTea" placeholder="Name">
+      <input ng-model="newOrigin" placeholder="Origin">
+      <button ng-click="addTea(newTea, newOrigin, 15, true)">Submit</button></label>
+    </div>
+
     <table>
       <tr>
         <th>Tea</th>
@@ -9,11 +28,12 @@
         <th>In stock</th>
       </tr>
 
-      <tr ng-repeat="tea in teas">
+      <tr ng-repeat="tea in teas | filter: {name: nameFilter, origin: nameOrigin}">
         <td>{{tea.name}}</td>
         <td>{{tea.origin}}</td>
         <td>{{tea.weight}}</td>
         <td>{{tea.in_stock}}</td>
+        <td><button ng-click="deleteTea(tea)">Delete</button></td>
       </tr>
     </table>
 
