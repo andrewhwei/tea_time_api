@@ -26,7 +26,7 @@
     });
   }
 
-  $scope.orderThis = function(attribute) {
+  $scope.orderColumn = function(attribute) {
     if (attribute != $scope.orderAttribute) {
       $scope.descending = false;
     } else {

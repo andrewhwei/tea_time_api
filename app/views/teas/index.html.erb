@@ -5,13 +5,21 @@
       <li ng-repeat="error in errors">{{ error }}</li>
     </ul>
 
+    <datalist id="names">
+      <option ng-repeat="tea in teas">{{tea.name}}</option>
+    </datalist>
+
+    <datalist id="origins">
+      <option ng-repeat="tea in teas">{{tea.origin}}</option>
+    </datalist>
+
     <div>
       <label>Filter by name:
-      <input ng-model="nameFilter"></label>
+      <input ng-model="nameFilter" list="names"></label>
     </div>
     <div>
       <label>Filter by origin:
-      <input ng-model="nameOrigin"></label>
+      <input ng-model="nameOrigin" list="origins"></label>
     </div>
     <div>
       <label>Add a new tea product:
@@ -22,8 +30,8 @@
 
     <table>
       <tr>
-        <th ng-click="orderThis('name')">Tea</th>
-        <th ng-click="orderThis('origin')">Origin</th>
+        <th ng-click="orderColumn('name')">Tea</th>
+        <th ng-click="orderColumn('origin')">Origin</th>
         <th>Oz available</th>
         <th>In stock</th>
       </tr>
