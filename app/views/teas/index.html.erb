@@ -22,13 +22,13 @@
 
     <table>
       <tr>
-        <th>Tea</th>
-        <th>Origin</th>
+        <th ng-click="orderThis('name')">Tea</th>
+        <th ng-click="orderThis('origin')">Origin</th>
         <th>Oz available</th>
         <th>In stock</th>
       </tr>
 
-      <tr ng-repeat="tea in teas | filter: {name: nameFilter, origin: nameOrigin}">
+      <tr ng-repeat="tea in teas | filter: {name: nameFilter, origin: nameOrigin} | orderBy: orderAttribute:descending">
         <td>{{tea.name}}</td>
         <td>{{tea.origin}}</td>
         <td>{{tea.weight}}</td>
