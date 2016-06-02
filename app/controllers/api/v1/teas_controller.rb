@@ -30,6 +30,6 @@ class Api::V1::TeasController < ApplicationController
   def destroy
     @tea = Tea.find_by(id: params[:id])
     @tea.delete
-    render json: {message: "Employee Deleted"}
+    render json: {message: "Tea Deleted"}
   end
 end
