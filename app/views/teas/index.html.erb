@@ -1,5 +1,4 @@
 <div ng-app="app">
-<foobar></foobar>
   <div ng-controller="teasCtrl" ng-init="setup()">
   
     <ul>
@@ -29,6 +28,8 @@
       <button ng-click="addTea(newTea, newOrigin, 15, true)">Submit</button></label>
     </div>
 
+    <foobar></foobar>
+
     <table>
       <tr>
         <th ng-click="orderColumn('name')">Tea</th>
@@ -37,7 +38,7 @@
         <th>In stock</th>
       </tr>
 
-      <tr ng-repeat="tea in teas | filter: {name: nameFilter, origin: nameOrigin} | orderBy: orderAttribute:descending">
+      <tr ng-repeat="tea in teas | availability">
         <td>{{tea.name}}</td>
         <td>{{tea.origin}}</td>
         <td>{{tea.weight}}</td>

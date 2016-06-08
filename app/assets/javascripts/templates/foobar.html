@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th ng-click="orderColumn('name')">Tea</th>
+    <th ng-click="orderColumn('origin')">Origin</th>
+    <th>Oz available</th>
+    <th>In stock</th>
+  </tr>
+
+  <tr ng-repeat="tea in teas | filter: {name: nameFilter, origin: nameOrigin} | orderBy: orderAttribute:descending">
+    <td>{{tea.name}}</td>
+    <td>{{tea.origin}}</td>
+    <td>{{tea.weight}}</td>
+    <td>{{tea.in_stock}}</td>
+    <td><button ng-click="deleteTea(tea)">Delete</button></td>
+  </tr>
+</table>
