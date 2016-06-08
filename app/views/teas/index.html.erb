@@ -28,12 +28,13 @@
       <button ng-click="addTea(newTea, newOrigin, 15, true)">Submit</button></label>
     </div>
 
-    <foobar></foobar>
+    <tea-table></tea-table>
 
+    <h3>Teas in stock with more than 10oz</h3>
     <table>
       <tr>
-        <th ng-click="orderColumn('name')">Tea</th>
-        <th ng-click="orderColumn('origin')">Origin</th>
+        <th>Tea</th>
+        <th>Origin</th>
         <th>Oz available</th>
         <th>In stock</th>
       </tr>
@@ -43,7 +44,6 @@
         <td>{{tea.origin}}</td>
         <td>{{tea.weight}}</td>
         <td>{{tea.in_stock}}</td>
-        <td><button ng-click="deleteTea(tea)">Delete</button></td>
       </tr>
     </table>
 
