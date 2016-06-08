@@ -1,4 +1,4 @@
-angular.module("app").filter('availability', [function () {
+angular.module("availabilityFilter", []).filter('availability', [function () {
   return function(teas) {
     var tempTeas = [];
     if (teas) {

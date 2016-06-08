@@ -1,6 +1,6 @@
 (function() {
   "use strict";
 
-  angular.module("app", ["ngAnimate", "templates"]);
+  angular.module("app", ["ngAnimate", "templates", "availabilityFilter"]);
 
 }());

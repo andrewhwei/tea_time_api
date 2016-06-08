@@ -16,5 +16,6 @@
 //= require angular-animate
 //= require angular-rails-templates
 //= require_tree ../templates
+//= require availability_filter
 //= require app
 //= require_tree .
